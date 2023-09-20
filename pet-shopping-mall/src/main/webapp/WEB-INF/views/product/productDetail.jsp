@@ -263,25 +263,20 @@
 										pattern="yyyy.MM.dd" />
 								</em>
 							</div>
-							<!-- 리뷰 펫 -->
-							<c:set var="pets" value="${reviewPetsMap[review.reviewId]}" />
-							<c:if test="${not empty pets}">
+							<c:if test="${not empty review.pets}">
 								<div class="reivew-pet-box">
-									<!-- 펫정보 -->
-									<c:forEach items="${pets}" var="pet">
-										<em class="review-pet-name">${pet.petName} &nbsp; <em
-											class="review-em">|</em></em>
-										<em class="review-pet-gender">${pet.petGender} &nbsp; <em
-											class="review-em">|</em></em>
-										<em class="review-pet-age">${pet.petAge}살 &nbsp; <em
-											class="review-em">|</em></em>
-										<em class="review-pet-weight">${pet.petWeight}kg &nbsp; <em
-											class="review-em">|</em></em>
-										<em class="review-pet-breed">${pet.petBreed}</em>
-									</c:forEach>
+									<em class="review-pet-name">${review.pets[0].petName} &nbsp; <em
+										class="review-em">|</em></em>
+									<em class="review-pet-gender">${review.pets[0].petGender} &nbsp; <em
+										class="review-em">|</em></em>
+									<em class="review-pet-age">${review.pets[0].petAge}살 &nbsp; <em
+										class="review-em">|</em></em>
+									<em class="review-pet-weight">${review.pets[0].petWeight}kg &nbsp; <em
+										class="review-em">|</em></em>
+									<em class="review-pet-breed">${review.pets[0].petBreed}</em>
 								</div>
 							</c:if>
-							<c:if test="${empty pets}">
+							<c:if test="${empty review.pets}">
 								<em class="review-pet-name">펫 정보가 등록되지 않은 회원입니다.</em>
 							</c:if>
 							<!-- 리뷰 별점 -->
@@ -316,14 +311,11 @@
 								<div class="gallery_wrap3"
 									style="height: 280px; margin-left: 77px; margin-right: 70px; margin-bottom: 27px;">
 									<ul class="gallery3">
-										<c:set var="reviewImages" value="${productDetail.reviews}" />
-										<c:forEach var="review" items="${reviewImages}">
-										  <c:forEach var="filename" items="${review.reviewImages}" varStatus="loop">
-										    <li class="gallery_item1">
+										<c:forEach var="filename" items="${review.reviewImages}" varStatus="loop">
+										   <li class="gallery_item1">
 										      <img class="indexImg" alt="Review Image"
-										           src="${pageContext.request.contextPath}/resources/upload/review/${filename.imageRenamedFilename}">
+										         src="${pageContext.request.contextPath}/resources/upload/review/${filename.imageRenamedFilename}">
 										    </li>
-										  </c:forEach>
 										</c:forEach>
 									</ul>
 								</div>

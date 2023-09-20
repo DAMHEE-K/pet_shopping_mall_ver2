@@ -21,6 +21,6 @@ public class ProductReviewDto {
 	private String reviewTitle;
 	private String reviewContent;
 	private List<ImageAttachment> reviewImages;
-	private Pet pet;
+	private List<Pet> pets;
 	
 }

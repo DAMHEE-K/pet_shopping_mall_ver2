@@ -109,4 +109,5 @@ public interface ReviewRepository {
 	List<ReviewDetailDto> getReviewDetailsByProductId(int productId);
 
 	List<ProductReviewDto> getProductReview(RowBounds rowBounds, int productId);
+	List<ProductReviewDto> getProductReview(int productId);
 }

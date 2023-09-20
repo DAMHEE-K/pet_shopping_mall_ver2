@@ -208,7 +208,7 @@
             r.review_content
 	    from
 	        product p
-	    join
+	    left join
 	    	review r on p.product_id = r.product_id
         join 
             product_detail pd on p.product_id = pd.product_id

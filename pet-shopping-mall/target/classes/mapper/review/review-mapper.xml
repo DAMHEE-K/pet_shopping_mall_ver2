@@ -77,9 +77,12 @@
 	    r.review_title,
 	    r.review_content,
 	    r.review_star_rate,
-	    ia.image_renamed_filename
+	    ia.image_renamed_filename,
+        p.*
 	FROM 
 	    review r
+    left join
+        pet p on p.member_id = r.review_member_id
 	LEFT JOIN 
 	    image_attachment_mapping iam ON r.review_id = iam.ref_id AND iam.ref_table = 'review'
 	LEFT JOIN
@@ -87,7 +90,6 @@
 	WHERE 
 	    r.product_id = #{productId}
 	</select>
-	
 	
 	<resultMap type="ProductReviewDto" id="productReviewDto">
     	<result property="reviewId" column="review_id"/>
@@ -99,6 +101,14 @@
 		<collection property="reviewImages" ofType="imageAttachment">
 	        <result property="imageRenamedFilename" column="image_renamed_filename"/>
 	    </collection>
+   		<collection property="pets" ofType="Pet">
+	        <result property="petId" column="pet_id"/>
+	        <result property="petName" column="pet_name"/>
+	        <result property="petAge" column="pet_age"/>
+	        <result property="petBreed" column="pet_breed"/>
+	        <result property="petWeight" column="pet_weight"/>
+	        <result property="petGender" column="pet_gender"/>
+    	</collection>
 	</resultMap>
 	
 	

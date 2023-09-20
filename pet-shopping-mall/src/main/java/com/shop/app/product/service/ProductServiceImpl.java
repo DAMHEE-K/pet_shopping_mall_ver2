@@ -234,14 +234,23 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductDetailDto getProductDetails(int productId, Map<String, Object> params) {
-		int limit = (int) params.get("limit");
-		int page = (int) params.get("page");
-		int offset = (page - 1) * limit;
-		RowBounds rowBounds = new RowBounds(offset, limit);
+		List<ProductReviewDto> reviews = null;
+		
+		if(params != null) {
+			int limit = (int) params.get("limit");
+			int page = (int) params.get("page");
+			int offset = (page - 1) * limit;
+			RowBounds rowBounds = new RowBounds(offset, limit);
+			reviews = reviewRepository.getProductReview(rowBounds, productId);
+		} else {
+			reviews = reviewRepository.getProductReview(productId);
+		}
 		
 		ProductDetailDto product = productRepository.getProductDetails(productId);
-		List<ProductReviewDto> reviews = reviewRepository.getProductReview(rowBounds, productId);
-		product.setReviews(reviews);
+		
+		if (reviews != null) {
+			product.setReviews(reviews);
+		}
 		
 		return product;
 	}
