@@ -1,0 +1,18 @@
+2023-09-20 01:59:00,726 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-09-20 01:59:26,881 [Worker-6: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shop:hello-springboot:0.0.1-SNAPSHOT @ C:\Users\다미\Desktop\newfolder\pet-shopping-mall\pom.xml.
+2023-09-20 01:59:35,323 [Worker-9: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shop:hello-springboot:0.0.1-SNAPSHOT @ C:\Users\다미\Desktop\newfolder\pet-shopping-mall\pom.xml.
+2023-09-20 01:59:36,773 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-20 01:59:36,774 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-09-20 01:59:36,778 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2023-09-20 01:59:36,801 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 21 resources
+2023-09-20 01:59:36,908 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-20 01:59:36,908 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-09-20 01:59:36,908 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\다미\Desktop\newfolder\pet-shopping-mall\src\test\resources
+2023-09-20 01:59:38,616 [Worker-1: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.shop:hello-springboot:0.0.1-SNAPSHOT @ C:\Users\다미\Desktop\newfolder\pet-shopping-mall\pom.xml.
+2023-09-20 01:59:42,217 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-20 01:59:42,217 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-09-20 01:59:42,226 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2023-09-20 01:59:42,245 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 21 resources
+2023-09-20 01:59:42,313 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-20 01:59:42,314 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-09-20 01:59:42,314 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\다미\Desktop\newfolder\pet-shopping-mall\src\test\resources
