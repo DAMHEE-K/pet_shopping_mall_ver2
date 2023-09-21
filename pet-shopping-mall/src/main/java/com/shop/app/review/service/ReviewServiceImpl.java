@@ -14,6 +14,7 @@ import com.shop.app.order.service.OrderService;
 import com.shop.app.pet.entity.Pet;
 import com.shop.app.pet.repository.PetRepository;
 import com.shop.app.pet.service.PetService;
+import com.shop.app.product.dto.ProductDetailDto;
 import com.shop.app.product.dto.ProductInfoDto;
 import com.shop.app.product.entity.Product;
 import com.shop.app.product.repository.ProductRepository;
@@ -207,10 +208,6 @@ public class ReviewServiceImpl implements ReviewService {
 		return reviewRepository.productReviewStarAvg(productId);
 	}
 
-//	@Override
-//	public List<ProductReviewAvgDto> findProductReviewAvgAll(int productId) {
-//		return reviewRepository.findProductReviewAvgAll(productId);
-//	}
 
 	@Override
 	public int findProductListReviewTotalCount(int productId) {
@@ -227,10 +224,11 @@ public class ReviewServiceImpl implements ReviewService {
 	public ReviewDetails findProductImageAttachmentsByReviewId2(int reviewId2, int orderId) {
 		return reviewRepository.findProductImageAttachmentsByReviewId2(reviewId2, orderId);
 	}
-//	@Override
-//	public ReviewDetails findProductImageAttachmentsByReviewId2(int reviewId2) {
-//		return reviewRepository.findProductImageAttachmentsByReviewId2(reviewId2);
-//	}
+
+	@Override
+	public List<Integer> getStarRate(int productId) {
+		return reviewRepository.getStarRate(productId);
+	}
 
 
 }

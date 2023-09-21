@@ -99,15 +99,12 @@ public class ProductController {
 		int totalCount = productDetail.getReviewCnt();
 		int totalPages = (int) Math.ceil((double) totalCount / limit);
 		
-		log.debug("productDetail = {}", productDetail);
-		
 		int[] starCounts = new int[6];
 		
-		ProductDetailDto reviewStarRate = productService.getProductDetails(productId, null);
+		List<Integer> reviewStarRate = reviewService.getStarRate(productId);
 		
-		for (ProductReviewDto review : reviewStarRate.getReviews()) {
-			int star = review.getReviewStarRate();
-			starCounts[star]++;
+		for (Integer rate : reviewStarRate) {
+			starCounts[rate]++;
 		}
 
 		double[] starPercentages = new double[6]; // 각 별점별 백분율을 저장할 배열
@@ -115,8 +112,6 @@ public class ProductController {
 		for (int i = 1; i <= 5; i++) {
 			starPercentages[i] = (double) starCounts[i] / totalCount * 100;
 		}
-
-		model.addAttribute("starPercentages", starPercentages);
 
 		// starPercentages 배열을 계산하고, 백분율로 변환하여 소수점 없이 포맷팅한 리스트를 생성
 		List<String> formattedPercentages = new ArrayList<>();
@@ -127,12 +122,9 @@ public class ProductController {
 
 		model.addAttribute("formattedPercentages", formattedPercentages);
 		
-		
 		model.addAttribute("totalPages", totalPages);
 		model.addAttribute("productDetail", productDetail);
-
 		
-
 		if (member != null) {
 			model.addAttribute("likeState", wishlistService.getLikeProduct(productId, member.getMemberId()));
 		}

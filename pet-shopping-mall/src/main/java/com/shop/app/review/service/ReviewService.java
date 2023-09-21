@@ -3,6 +3,7 @@ package com.shop.app.review.service;
 import java.util.List;
 import java.util.Map;
 
+import com.shop.app.product.dto.ProductDetailDto;
 import com.shop.app.product.dto.ProductInfoDto;
 import com.shop.app.review.dto.ProductReviewAvgDto;
 import com.shop.app.review.dto.ReviewDetailDto;
@@ -73,13 +74,9 @@ public interface ReviewService {
 	List<Review> findProductReviewAllNoPageBar(int productId);
 
 	ReviewDetails findProductImageAttachmentsByReviewId2(int reviewId2, int orderId);
-//	ReviewDetails findProductImageAttachmentsByReviewId2(int reviewId2);
 
+	List<Integer> getStarRate(int productId);
 
-
-
-
-//	List<ReviewDetailDto> findProductReviewDetails(List<Review> reviews);
 
 
 }

@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.session.RowBounds;
 
 import com.shop.app.common.entity.ImageAttachment;
+import com.shop.app.product.dto.ProductDetailDto;
 import com.shop.app.product.dto.ProductInfoDto;
 import com.shop.app.review.dto.ProductReviewAvgDto;
 import com.shop.app.review.dto.ProductReviewDto;
@@ -110,4 +111,7 @@ public interface ReviewRepository {
 
 	List<ProductReviewDto> getProductReview(RowBounds rowBounds, int productId);
 	List<ProductReviewDto> getProductReview(int productId);
+
+	@Select("select review_star_rate from review where product_id = #{productId}")
+	List<Integer> getStarRate(int productId);
 }
